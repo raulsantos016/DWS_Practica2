@@ -1,0 +1,180 @@
+/* css/style.css - estilo básico para la práctica */
+
+/* Reset/normalización muy ligera */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fondo y contenedor general */
+body {
+  background: #f6f8fa;
+  color: #222;
+  line-height: 1.4;
+  padding: 20px;
+}
+
+/* Contenido centrado con ancho cómodo */
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(20,20,20,0.06);
+  padding: 18px;
+}
+
+/* Títulos */
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+h2 {
+  font-size: 1.25rem;
+  margin: 14px 0 8px;
+}
+
+/* Tablas sencillas legibles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+table th,
+table td {
+  border: 1px solid #e3e6ea;
+  padding: 8px 10px;
+  text-align: left;
+}
+table th {
+  background: #f0f3f6;
+  font-weight: 600;
+}
+
+/* Filas alternativas para legibilidad */
+table tr:nth-child(even) td {
+  background: #fbfcfd;
+}
+
+/* Formularios básicos */
+form {
+  margin-top: 10px;
+}
+label {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+input[type="text"],
+input[type="date"],
+select {
+  padding: 8px;
+  border: 1px solid #d0d6db;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 8px;
+  display: block;
+  background: #fff;
+}
+
+/* Botones sencillos */
+input[type="submit"],
+button {
+  background: #2d89ef;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 6px;
+}
+input[type="submit"]:hover,
+button:hover {
+  background: #1f6fd1;
+}
+
+/* Botón de borrar (variación) */
+.btn-danger {
+  background: #e04b4b;
+}
+.btn-danger:hover {
+  background: #c73737;
+}
+
+/* Formularios inline (para las acciones en las filas de tablas) */
+.form-inline {
+  display: inline-block;
+  margin: 0;
+}
+
+/* Mensajes simples */
+.success {
+  color: #1b7a1b;
+  margin: 8px 0;
+}
+.error {
+  color: #a94442;
+  margin: 8px 0;
+}
+
+.menu {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    margin-right: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2d89ef;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Pequeños ajustes responsivos */
+@media (max-width: 700px) {
+  .container {
+    padding: 12px;
+  }
+  input[type="text"], select {
+    max-width: 100%;
+  }
+  table th, table td {
+    font-size: 0.9rem;
+  }
+}
+
+/* Centro y justificado */
+.center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.justified {
+    text-align: justify;
+    margin-bottom: 16px;
+}
+
+/* Separación vertical para el menú */
+.menu.spaced {
+    margin-bottom: 25px;
+}
+
+/* Enlaces más oscuros */
+.menu a {
+    margin-right: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1a1a1a; /* color más oscuro */
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    color: #2d89ef; /* mantenemos hover azul */
+}

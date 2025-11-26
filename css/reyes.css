@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #D4DAFF;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #34495e;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Georgia', 'Palatino', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #f1c40f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 2rem;
+    color: #ecf0f1;
+}
+
+.menu {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.menu a {
+    display: inline-block;
+    margin: 0 18px;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #7f8c8d;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #2c3e50;
+    color: #f1c40f;
+}
+
+table tr:nth-child(even) td {
+    background: #3d566e;
+}
+
+.total {
+    text-align: right;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #f1c40f;
+    font-weight: bold;
+}

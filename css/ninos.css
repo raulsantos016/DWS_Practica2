@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #D4DAFF;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #34495e;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Georgia', 'Palatino', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #f1c40f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.menu {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.menu a {
+    display: inline-block;
+    margin: 0 18px;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #f1c40f;
+    color: #2c3e50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+table th, table td {
+    border: 1px solid #7f8c8d;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #2c3e50;
+    color: #f1c40f;
+}
+
+table tr:nth-child(even) td {
+    background: #3d566e;
+}
+
+table input[type="text"],
+table input[type="date"],
+table select {
+    width: 90%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #7f8c8d;
+    text-align: center;
+}
+
+.btn-modificar {
+    background-color: #2d89ef;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-modificar:hover {
+    background-color: #1f6fd1;
+}
+
+.btn-borrar {
+    background-color: #e04b4b;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-borrar:hover {
+    background-color: #c73737;
+}
+
+.btn-agregar {
+    background-color: #2d89ef;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background-color: #1f6fd1;
+}
+
+.btn-limpiar {
+    background-color: #35CC27;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-limpiar:hover {
+    background-color: #15C700;
+}
+
+.btn-buscar {
+    background-color: #8e44ad;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-buscar:hover {
+    background-color: #732d91;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.selector select {
+    width: 60%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #7f8c8d;
+}
+
+.form-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-add input[type="text"],
+.form-add input[type="date"],
+.form-add select {
+    width: 60%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #7f8c8d;
+}
+
+.mensaje {
+    text-align: center;
+    background-color: #f1c40f; /* amarillo */
+    color: #2c3e50; /* texto oscuro */
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.mensaje.error { background-color: #e74c3c; color: white; }
+.mensaje.exito { background-color: #2ecc71; color: white; }
