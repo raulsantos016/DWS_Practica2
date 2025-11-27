@@ -10,8 +10,6 @@ class clase_reyes
 
     function regalosPorRey($id_rey)
     {
-        $id_rey = intval($id_rey);
-
         $consulta = "SELECT 
                         regalos.nombreRegalo AS regalo,
                         ninos.nombreNino AS nino,

@@ -53,7 +53,7 @@ $resultado = $ninos->obtenerTodos();
 <head>
     <meta charset="UTF-8">
     <title>Niños</title>
-    <link rel="stylesheet" href="css/ninos.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <script>
         function confirmarAccion(form) {
             let nombre = form.nombreNino ? form.nombreNino.value.trim() : '';

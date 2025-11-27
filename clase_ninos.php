@@ -25,11 +25,12 @@ class clase_ninos
     }
 
     // Borrar un niño
-    function borrar($idNino)
+    public function borrar($idNino)
     {
-        $consulta = "DELETE FROM ninos WHERE idNino = $idNino";
-        return mysqli_query($this->conexion, $consulta);
+        mysqli_query($this->conexion, "DELETE FROM nino_regalo WHERE idNinoFK=$idNino");
+        mysqli_query($this->conexion, "DELETE FROM ninos WHERE idNino=$idNino");
     }
+
 
     // Modificar datos de un niño
     function modificar($idNino, $nombreNino, $apellidosNino, $fechaNacimiento, $esBueno)
@@ -44,4 +45,3 @@ class clase_ninos
         return mysqli_query($this->conexion, $consulta);
     }
 }
-?>

@@ -24,11 +24,12 @@ class clase_regalos
     }
 
     // Borrar un regalo
-    function borrar($idRegalo)
+    public function borrar($idRegalo)
     {
-        $consulta = "DELETE FROM regalos WHERE idRegalo = $idRegalo";
-        return mysqli_query($this->conexion, $consulta);
+        mysqli_query($this->conexion, "DELETE FROM nino_regalo WHERE idRegaloFK=$idRegalo");
+        mysqli_query($this->conexion, "DELETE FROM regalos WHERE idRegalo=$idRegalo");
     }
+
 
     // Modificar un regalo
     function modificar($idRegalo, $nombreRegalo, $precioRegalo, $idRey)
@@ -42,4 +43,3 @@ class clase_regalos
         return mysqli_query($this->conexion, $consulta);
     }
 }
-?>

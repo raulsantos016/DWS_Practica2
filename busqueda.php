@@ -6,26 +6,22 @@ $conexion = (new clase_conexion())->conectar();
 $mensaje = "";
 $idNinoActual = null;
 
-// Buscar Niño
 if (isset($_POST['buscar'])) {
     if ($_POST['idNino'] == "") {
         $mensaje = "Por favor, selecciona un niño.";
     } else {
-        $idNinoActual = intval($_POST['idNino']);
+        $idNinoActual = $_POST['idNino'];
     }
 }
 
-// Agregar Regalo
 if (isset($_POST['agregar'])) {
 
-    $idNinoActual = intval($_POST['idNino']);
-    $idRegalo = intval($_POST['idRegalo']);
+    $idNinoActual = $_POST['idNino'];
+    $idRegalo = $_POST['idRegalo'];
 
     if ($idNinoActual <= 0 || $idRegalo <= 0) {
         $mensaje = "Por favor, selecciona un niño y un regalo válidos.";
     } else {
-
-        // Verificar relación existente
         $consulta = "SELECT * FROM nino_regalo WHERE idNinoFK=$idNinoActual AND idRegaloFK=$idRegalo";
         $existe = mysqli_query($conexion, $consulta);
 
@@ -40,7 +36,6 @@ if (isset($_POST['agregar'])) {
     $_POST['buscar'] = true;
 }
 
-// Obtener lista de niños
 $listaNinos = mysqli_query($conexion, "SELECT * FROM ninos ORDER BY nombreNino ASC");
 ?>
 <!DOCTYPE html>
@@ -49,7 +44,7 @@ $listaNinos = mysqli_query($conexion, "SELECT * FROM ninos ORDER BY nombreNino A
 <head>
     <meta charset="utf-8">
     <title>Búsqueda de regalos</title>
-    <link rel="stylesheet" href="css/ninos.css">
+    <link rel="stylesheet" href="css/estilos.css">
 
     <script>
         function confirmarAgregar() {
@@ -96,7 +91,6 @@ $listaNinos = mysqli_query($conexion, "SELECT * FROM ninos ORDER BY nombreNino A
         <?php if (isset($_POST['buscar']) && $idNinoActual): ?>
 
             <?php
-            // obtener el nombre del niño seleccionado para mostrarlo en el título
             $resNombre = mysqli_query($conexion, "SELECT nombreNino FROM ninos WHERE idNino = $idNinoActual");
             $nombreNino = "";
             if ($filaNombre = mysqli_fetch_array($resNombre)) {
@@ -104,8 +98,8 @@ $listaNinos = mysqli_query($conexion, "SELECT * FROM ninos ORDER BY nombreNino A
             }
             ?>
             <br><br>
-            <h2>Regalos asignados a <?php echo htmlspecialchars($nombreNino); ?></h2><br>
-
+            <h2>Regalos asignados a <?php echo htmlspecialchars($nombreNino); ?></h2>
+            <br>
 
             <table>
                 <thead>

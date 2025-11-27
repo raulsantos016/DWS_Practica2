@@ -1,12 +1,11 @@
-<?php 
+<?php
 include "clase_conexion.php";
 include "clase_reyes.php";
 
 $conexion = (new clase_conexion())->conectar();
 $reyes = new clase_reyes($conexion);
 
-// Lista completa de reyes
-$lista = mysqli_query($conexion, "SELECT * FROM reyes ORDER BY nombreRey ASC");
+$listaReyes = mysqli_query($conexion, "SELECT * FROM reyes");
 ?>
 
 <!DOCTYPE html>
@@ -31,51 +30,44 @@ $lista = mysqli_query($conexion, "SELECT * FROM reyes ORDER BY nombreRey ASC");
         </div>
 
         <?php
-        while ($rey = mysqli_fetch_array($lista)) {
-
+        while ($rey = mysqli_fetch_assoc($listaReyes)) {
             echo "<h2>" . htmlspecialchars($rey['nombreRey']) . "</h2>";
 
-            // Regalos asociados a este rey
             $resultado = $reyes->regalosPorRey($rey['idRey']);
             $totalGastado = 0;
 
-            echo "<table>";
-            echo "<thead>
-                    <tr>
-                        <th>Regalo</th>
-                        <th>Niño</th>
-                        <th>Precio</th>
-                    </tr>
-                  </thead>
-                  <tbody>";
+            echo "<table>
+            <thead>
+                <tr>
+                    <th>Regalo</th>
+                    <th>Niño</th>
+                    <th>Bueno</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>";
 
-            while ($fila = mysqli_fetch_array($resultado)) {
-
-                $esBueno = ($fila['bueno'] === "Sí");  // ya validado porque es un <select>
-                $precioFormateado = number_format($fila['precio'], 2, ',', '.');
-
-                // Si es malo → fondo rojo suave
-                $style = $esBueno ? "" : "style='background-color: #c0392b66;'";
-
-                echo "<tr $style>
-                        <td>" . htmlspecialchars($fila['regalo']) . "</td>
-                        <td>" . htmlspecialchars($fila['nino']) . "</td>
-                        <td>$precioFormateado €</td>
-                      </tr>";
-
-                // Solo suma los buenos
+            while ($fila = mysqli_fetch_assoc($resultado)) {
+                $esBueno = ($fila['bueno'] === "Sí");
                 if ($esBueno) {
                     $totalGastado += $fila['precio'];
                 }
+
+                echo "<tr>
+                <td>" . htmlspecialchars($fila['regalo']) . "</td>
+                <td>" . htmlspecialchars($fila['nino']) . "</td>
+                <td>" . htmlspecialchars($fila['bueno']) . "</td>
+                <td>" . number_format($fila['precio'], 2, ',', '.') . " €</td>
+              </tr>";
             }
 
             echo "</tbody></table>";
 
             echo "<strong class='total'>
-                    Total gastado SOLO en niños buenos: 
-                    " . number_format($totalGastado, 2, ',', '.') . " €
-                  </strong><br><br>";
+            Total gastado SOLO en niños buenos: " . number_format($totalGastado, 2, ',', '.') . " €
+          </strong><br><br>";
         }
+
         ?>
     </div>
 </body>

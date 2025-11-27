@@ -73,7 +73,9 @@ table tr:nth-child(even) td {
     background: #3d566e;
 }
 
-table input[type="text"], table select {
+table input[type="text"],
+table input[type="date"],
+table select {
     width: 90%;
     padding: 5px;
     border-radius: 4px;
@@ -92,7 +94,9 @@ table input[type="text"], table select {
     font-weight: bold;
 }
 
-.btn-modificar:hover { background-color: #1f6fd1; }
+.btn-modificar:hover {
+    background-color: #1f6fd1;
+}
 
 .btn-borrar {
     background-color: #e04b4b;
@@ -104,7 +108,9 @@ table input[type="text"], table select {
     font-weight: bold;
 }
 
-.btn-borrar:hover { background-color: #c73737; }
+.btn-borrar:hover {
+    background-color: #c73737;
+}
 
 .btn-agregar {
     background-color: #2d89ef;
@@ -116,7 +122,9 @@ table input[type="text"], table select {
     cursor: pointer;
 }
 
-.btn-agregar:hover { background-color: #1f6fd1; }
+.btn-agregar:hover {
+    background-color: #1f6fd1;
+}
 
 .btn-limpiar {
     background-color: #35CC27;
@@ -128,7 +136,37 @@ table input[type="text"], table select {
     cursor: pointer;
 }
 
-.btn-limpiar:hover { background-color: #15C700; }
+.btn-limpiar:hover {
+    background-color: #15C700;
+}
+
+.btn-buscar {
+    background-color: #8e44ad;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-buscar:hover {
+    background-color: #732d91;
+}
+
+.selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.selector select {
+    width: 60%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #7f8c8d;
+}
 
 .form-add {
     display: flex;
@@ -138,17 +176,13 @@ table input[type="text"], table select {
     margin-bottom: 20px;
 }
 
-.form-add input[type="text"], .form-add select {
+.form-add input[type="text"],
+.form-add input[type="date"],
+.form-add select {
     width: 60%;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #7f8c8d;
-}
-
-.form-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
 }
 
 .mensaje {
