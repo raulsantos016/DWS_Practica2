@@ -41,22 +41,17 @@ $listaReyes = mysqli_query($conexion, "SELECT * FROM reyes");
                 <tr>
                     <th>Regalo</th>
                     <th>Niño</th>
-                    <th>Bueno</th>
                     <th>Precio</th>
                 </tr>
             </thead>
             <tbody>";
 
             while ($fila = mysqli_fetch_assoc($resultado)) {
-                $esBueno = ($fila['bueno'] === "Sí");
-                if ($esBueno) {
-                    $totalGastado += $fila['precio'];
-                }
+                $totalGastado += $fila['precio'];
 
                 echo "<tr>
                 <td>" . htmlspecialchars($fila['regalo']) . "</td>
                 <td>" . htmlspecialchars($fila['nino']) . "</td>
-                <td>" . htmlspecialchars($fila['bueno']) . "</td>
                 <td>" . number_format($fila['precio'], 2, ',', '.') . " €</td>
               </tr>";
             }
@@ -64,7 +59,7 @@ $listaReyes = mysqli_query($conexion, "SELECT * FROM reyes");
             echo "</tbody></table>";
 
             echo "<strong class='total'>
-            Total gastado SOLO en niños buenos: " . number_format($totalGastado, 2, ',', '.') . " €
+            Total gastado: " . number_format($totalGastado, 2, ',', '.') . " €
           </strong><br><br>";
         }
 
